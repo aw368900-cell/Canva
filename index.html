@@ -3,214 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Design Access | Canva Premium Services</title>
+    <title>Canva Pro Premium | Instant Access & Best Rates</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #8b3dff;
-            --secondary: #00c4cc;
-            --dark: #1e1e24;
-            --light: #f4f7f6;
-            --white: #ffffff;
+            --primary-grad: linear-gradient(135deg, #8b3dff 0%, #ff4ecd 100%);
+            --accent: #00c4cc;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
         }
 
-        /* Header & Nav */
-        header {
-            background: var(--white);
-            padding: 1rem 5%;
+        /* --- Navigation --- */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
+            padding: 20px 8%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
+            font-weight: 800;
+            background: var(--primary-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .cta-button {
-            background: var(--primary);
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
+        /* --- Hero Section --- */
+        .hero {
+            padding: 180px 8% 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content { flex: 1; }
+        .hero-image { flex: 1; position: relative; }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 35px;
+            max-width: 500px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(139, 61, 255, 0.2);
+            color: #bd93f9;
+            border-radius: 50px;
+            font-size: 0.9rem;
             font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* --- Buttons --- */
+        .btn-main {
+            padding: 16px 32px;
+            background: var(--primary-grad);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(139, 61, 255, 0.3);
+        }
+
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(139, 61, 255, 0.4); }
+
+        /* --- Trust Bar --- */
+        .trust-bar {
+            background: rgba(255,255,255,0.03);
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            border-y: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .trust-item { color: var(--text-dim); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;}
+        .trust-item i { color: var(--accent); margin-right: 8px; }
+
+        /* --- Pricing Section --- */
+        .pricing { padding: 100px 8%; text-align: center; }
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            padding: 50px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
             transition: 0.3s;
         }
 
-        .cta-button:hover {
-            background: #722ed1;
+        .price-card.featured {
+            border: 2px solid #8b3dff;
+            transform: scale(1.05);
+            background: linear-gradient(180deg, #1e293b 0%, #111827 100%);
         }
 
-        /* Hero Section */
-        .hero {
+        .price-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .price-tag { font-size: 3rem; font-weight: 800; margin: 20px 0; }
+        .price-tag span { font-size: 1rem; color: var(--text-dim); }
+
+        .feature-list { list-style: none; margin: 30px 0; text-align: left; }
+        .feature-list li { margin-bottom: 15px; color: var(--text-dim); }
+        .feature-list i { color: #10b981; margin-right: 10px; }
+
+        /* --- WhatsApp Floating Button --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
             display: flex;
             align-items: center;
-            padding: 80px 10%;
-            background: linear-gradient(135deg, #8b3dff 0%, #00c4cc 100%);
-            color: white;
-            gap: 50px;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 2000;
+            transition: 0.3s;
         }
 
-        .hero-text { flex: 1; }
-        .hero-image { flex: 1; text-align: center; }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        .payment-methods {
+            margin-top: 30px;
+            opacity: 0.7;
+            font-size: 1.2rem;
+            word-spacing: 15px;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.2; }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
-
-        /* Features Section */
-        .section { padding: 80px 10%; text-align: center; }
-        .section-title { margin-bottom: 50px; font-size: 2.5rem; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 3rem; color: var(--secondary); margin-bottom: 20px; }
-        .card h3 { margin-bottom: 15px; }
-
-        /* Payment & Delivery Banner */
-        .info-banner {
-            background: #fff;
-            padding: 40px 10%;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .info-item { text-align: center; min-width: 200px; }
-        .info-item i { color: var(--primary); font-size: 2rem; margin-bottom: 10px; }
-
-        /* Footer */
+        /* --- Footer --- */
         footer {
-            background: var(--dark);
-            color: white;
-            padding: 40px 10%;
+            padding: 60px 8%;
+            background: #070b14;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
-            .hero h1 { font-size: 2.2rem; }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-image img { width: 100%; border-radius: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">PremiumCanvas</div>
-        <nav>
-            <a href="#pricing" class="cta-button">Get Started</a>
-        </nav>
-    </header>
+    <a href="https://wa.me/YOURNUMBERHERE" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <nav>
+        <div class="logo">CANVAPRO.VIP</div>
+        <div class="nav-links">
+            <a href="#pricing" class="btn-main" style="padding: 10px 20px;">Buy Now</a>
+        </div>
+    </nav>
 
     <section class="hero">
-        <div class="hero-text">
-            <h1>Unlock Your Creative Potential with Canva Premium</h1>
-            <p>Access millions of premium templates, stock photos, and pro features without the heavy price tag. Start designing like a pro today.</p>
-            <a href="#pricing" class="cta-button" style="background: var(--dark); padding: 1rem 2rem;">Upgrade Now</a>
+        <div class="hero-content">
+            <span class="badge">✨ Verified Premium Seller</span>
+            <h1>Design Without <br><span style="color: var(--accent);">Boundaries.</span></h1>
+            <p>Get full access to Canva Pro features instantly. No watermarks, no limits, just pure creativity delivered to your inbox or WhatsApp.</p>
+            <div class="hero-btns">
+                <a href="#pricing" class="btn-main">View Pricing</a>
+                <a href="https://wa.me/YOURNUMBERHERE" style="margin-left: 15px; color: white; text-decoration: none; font-weight: 600;">
+                    <i class="fab fa-whatsapp"></i> Contact Support
+                </a>
+            </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Graphic Design Preview">
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="Canva Dashboard" style="width: 100%; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
         </div>
     </section>
 
-    <div class="info-banner">
-        <div class="info-item">
-            <i class="fas fa-bolt"></i>
-            <h3>Instant Delivery</h3>
-            <p>Via Email or WhatsApp</p>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-credit-card"></i>
-            <h3>Secure Payments</h3>
-            <p>All Payment Methods Accepted</p>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-headset"></i>
-            <h3>24/7 Support</h3>
-            <p>We are here to help you</p>
-        </div>
+    <div class="trust-bar">
+        <div class="trust-item"><i class="fas fa-bolt"></i> Instant Delivery</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> Full Warranty</div>
+        <div class="trust-item"><i class="fas fa-lock"></i> 100% Secure</div>
+        <div class="trust-item"><i class="fas fa-globe"></i> Global Access</div>
     </div>
 
-    <section class="section">
-        <h2 class="section-title">Why Choose Our Service?</h2>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-layer-group"></i>
-                <h3>Full Pro Access</h3>
-                <p>Enjoy everything Canva has to offer, including Brand Kits, Background Remover, and Magic Resize.</p>
+    <section class="pricing" id="pricing">
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Choose Your Plan</h2>
+        <p style="color: var(--text-dim);">Unlock 100+ Million Premium assets today.</p>
+
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Monthly Access</h3>
+                <div class="price-tag">$4.99 <span>/mo</span></div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> All Premium Templates</li>
+                    <li><i class="fas fa-check"></i> Background Remover</li>
+                    <li><i class="fas fa-check"></i> Magic Resize Tool</li>
+                    <li><i class="fas fa-check"></i> Delivery via Email</li>
+                </ul>
+                <a href="YOUR_PAYMENT_LINK_HERE" class="btn-main" style="width: 100%;">Purchase Now</a>
             </div>
-            <div class="card">
-                <i class="fas fa-infinity"></i>
-                <h3>Unlimited Assets</h3>
-                <p>100+ million premium stock photos, videos, audio and graphics at your fingertips.</p>
+
+            <div class="price-card featured">
+                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: 800; font-size: 0.8rem;">MOST POPULAR</div>
+                <h3>Lifetime Access</h3>
+                <div class="price-tag">$19.99 <span>/one-time</span></div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Everything in Pro</li>
+                    <li><i class="fas fa-check"></i> Brand Kit Access</li>
+                    <li><i class="fas fa-check"></i> Full Warranty Period</li>
+                    <li><i class="fas fa-check"></i> <strong>Instant WhatsApp Delivery</strong></li>
+                </ul>
+                <a href="YOUR_PAYMENT_LINK_HERE" class="btn-main" style="width: 100%;">Purchase Now</a>
             </div>
-            <div class="card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>100% Private & Secure</h3>
-                <p>We provide authentic activation. Your designs and data remain completely private to you.</p>
+
+            <div class="price-card">
+                <h3>Annual Access</h3>
+                <div class="price-tag">$12.99 <span>/year</span></div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Best for Freelancers</li>
+                    <li><i class="fas fa-check"></i> 100GB Cloud Storage</li>
+                    <li><i class="fas fa-check"></i> Social Media Scheduler</li>
+                    <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                </ul>
+                <a href="YOUR_PAYMENT_LINK_HERE" class="btn-main" style="width: 100%;">Purchase Now</a>
             </div>
         </div>
-    </section>
 
-    <section class="section" style="background: #fdfdfd;" id="pricing">
-        <h2 class="section-title">Ready to Design?</h2>
-        <div style="max-width: 500px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; border: 2px solid var(--primary);">
-            <h3 style="color: var(--primary); font-size: 2rem;">Premium Plan</h3>
-            <p style="font-size: 2rem; font-weight: bold; margin: 20px 0;">Best Price Guaranteed</p>
-            <ul style="list-style: none; text-align: left; margin-bottom: 30px;">
-                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: green;"></i> Instant Delivery (Email/WhatsApp)</li>
-                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: green;"></i> No more watermarks</li>
-                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: green;"></i> All Premium Templates</li>
-                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: green;"></i> Full Warranty Included</li>
-            </ul>
-            <a href="#" class="cta-button" style="display: block; font-size: 1.2rem;">Purchase via WhatsApp</a>
-            <p style="margin-top: 20px; font-size: 0.8rem;">We accept: PayPal, Credit Cards, Crypto, and Local Bank Transfers.</p>
+        <div style="margin-top: 50px;">
+            <p style="color: var(--text-dim); margin-bottom: 15px;">We accept all major payment methods:</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-bitcoin"></i>
+                <i class="fas fa-university"></i>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 PremiumCanvas Service. All rights reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">This service is not affiliated with Canva Pty Ltd officially.</p>
+        <p>&copy; 2026 PremiumCanvas Access. Professional Design Solutions.</p>
+        <p style="color: var(--text-dim); font-size: 0.8rem; margin-top: 15px;">Disclaimer: This site is a third-party reseller and is not endorsed by Canva Pty Ltd.</p>
     </footer>
 
 </body>
