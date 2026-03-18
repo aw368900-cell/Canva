@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Design Access | Canva Premium Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b3dff;
+            --secondary: #00c4cc;
+            --dark: #1e1e24;
+            --light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #722ed1;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            background: linear-gradient(135deg, #8b3dff 0%, #00c4cc 100%);
+            color: white;
+            gap: 50px;
+        }
+
+        .hero-text { flex: 1; }
+        .hero-image { flex: 1; text-align: center; }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+
+        /* Features Section */
+        .section { padding: 80px 10%; text-align: center; }
+        .section-title { margin-bottom: 50px; font-size: 2.5rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 3rem; color: var(--secondary); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 15px; }
+
+        /* Payment & Delivery Banner */
+        .info-banner {
+            background: #fff;
+            padding: 40px 10%;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .info-item { text-align: center; min-width: 200px; }
+        .info-item i { color: var(--primary); font-size: 2rem; margin-bottom: 10px; }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 10%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">PremiumCanvas</div>
+        <nav>
+            <a href="#pricing" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Unlock Your Creative Potential with Canva Premium</h1>
+            <p>Access millions of premium templates, stock photos, and pro features without the heavy price tag. Start designing like a pro today.</p>
+            <a href="#pricing" class="cta-button" style="background: var(--dark); padding: 1rem 2rem;">Upgrade Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Graphic Design Preview">
+        </div>
+    </section>
+
+    <div class="info-banner">
+        <div class="info-item">
+            <i class="fas fa-bolt"></i>
+            <h3>Instant Delivery</h3>
+            <p>Via Email or WhatsApp</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-credit-card"></i>
+            <h3>Secure Payments</h3>
+            <p>All Payment Methods Accepted</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>We are here to help you</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">Why Choose Our Service?</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-layer-group"></i>
+                <h3>Full Pro Access</h3>
+                <p>Enjoy everything Canva has to offer, including Brand Kits, Background Remover, and Magic Resize.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-infinity"></i>
+                <h3>Unlimited Assets</h3>
+                <p>100+ million premium stock photos, videos, audio and graphics at your fingertips.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>100% Private & Secure</h3>
+                <p>We provide authentic activation. Your designs and data remain completely private to you.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #fdfdfd;" id="pricing">
+        <h2 class="section-title">Ready to Design?</h2>
+        <div style="max-width: 500px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; border: 2px solid var(--primary);">
+            <h3 style="color: var(--primary); font-size: 2rem;">Premium Plan</h3>
+            <p style="font-size: 2rem; font-weight: bold; margin: 20px 0;">Best Price Guaranteed</p>
+            <ul style="list-style: none; text-align: left; margin-bottom: 30px;">
+                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: green;"></i> Instant Delivery (Email/WhatsApp)</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: green;"></i> No more watermarks</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: green;"></i> All Premium Templates</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: green;"></i> Full Warranty Included</li>
+            </ul>
+            <a href="#" class="cta-button" style="display: block; font-size: 1.2rem;">Purchase via WhatsApp</a>
+            <p style="margin-top: 20px; font-size: 0.8rem;">We accept: PayPal, Credit Cards, Crypto, and Local Bank Transfers.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 PremiumCanvas Service. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">This service is not affiliated with Canva Pty Ltd officially.</p>
+    </footer>
+
+</body>
+</html>
